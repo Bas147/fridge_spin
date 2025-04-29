@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "905251633010",
+    "project_id": "fridge-spin-mb",
+    "storage_bucket": "fridge-spin-mb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905251633010:android:308b6251a0116e6dbb0feb",
+        "android_client_info": {
+          "package_name": "com.fridgespin.fridge_spin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuTrih4lKlLK4vZnCCi1jZLl-F6LH4aUk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

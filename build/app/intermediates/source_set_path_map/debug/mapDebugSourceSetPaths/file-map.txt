@@ -1,0 +1,58 @@
+com.fridgespin.fridge_spin.app-jetified-lifecycle-livedata-core-ktx-2.7.0-0 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\0680198a7ddd8f6166dd1d9247f2112f\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0\res
+com.fridgespin.fridge_spin.app-jetified-lifecycle-process-2.7.0-1 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\08d27dc2414bd3636bfc4b4b5bafe717\transformed\jetified-lifecycle-process-2.7.0\res
+com.fridgespin.fridge_spin.app-appcompat-1.1.0-2 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\0bb97ba86cb47c60e516ef8426f48774\transformed\appcompat-1.1.0\res
+com.fridgespin.fridge_spin.app-core-runtime-2.2.0-3 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\1dfa8858fe2b64ca226cfec7fd5cdc4c\transformed\core-runtime-2.2.0\res
+com.fridgespin.fridge_spin.app-coordinatorlayout-1.0.0-4 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\1e70e0bc9433507f07ac55d4be9f0d96\transformed\coordinatorlayout-1.0.0\res
+com.fridgespin.fridge_spin.app-jetified-appcompat-resources-1.1.0-5 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\2dd97bc029be2f758f6f5ef70a0fdf0a\transformed\jetified-appcompat-resources-1.1.0\res
+com.fridgespin.fridge_spin.app-jetified-window-1.2.0-6 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\2f03d98acc47d24041ead0380e3cdc1f\transformed\jetified-window-1.2.0\res
+com.fridgespin.fridge_spin.app-jetified-play-services-auth-20.7.0-7 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\5062166ac26392f38fd5d1689bce0842\transformed\jetified-play-services-auth-20.7.0\res
+com.fridgespin.fridge_spin.app-jetified-fragment-ktx-1.7.1-8 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\6a903447710aaaf36d5a8f2234fe105c\transformed\jetified-fragment-ktx-1.7.1\res
+com.fridgespin.fridge_spin.app-jetified-startup-runtime-1.1.1-9 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\6f8df1f4177c7a370eaa6cf8fc19726b\transformed\jetified-startup-runtime-1.1.1\res
+com.fridgespin.fridge_spin.app-jetified-lifecycle-viewmodel-savedstate-2.7.0-10 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\7012cc388d7914762d80e3e1588ac54c\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\res
+com.fridgespin.fridge_spin.app-jetified-credentials-play-services-auth-1.2.0-rc01-11 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\787497843b18b0219f7bf09fadd97800\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\res
+com.fridgespin.fridge_spin.app-lifecycle-runtime-2.7.0-12 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\8098dfa2c8c249498b9696dbef8395a1\transformed\lifecycle-runtime-2.7.0\res
+com.fridgespin.fridge_spin.app-jetified-lifecycle-runtime-ktx-2.7.0-13 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\862f96a82502b2283c9aada4e89afc1e\transformed\jetified-lifecycle-runtime-ktx-2.7.0\res
+com.fridgespin.fridge_spin.app-jetified-profileinstaller-1.3.1-14 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\89c6176ff50d3c7c7d6913e26a46b00c\transformed\jetified-profileinstaller-1.3.1\res
+com.fridgespin.fridge_spin.app-jetified-savedstate-ktx-1.2.1-15 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\8f1accdb6e19750d3f5d464ec7baefb9\transformed\jetified-savedstate-ktx-1.2.1\res
+com.fridgespin.fridge_spin.app-jetified-core-1.0.0-16 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\8f4248ed24b37e0267cd8c8a5a248361\transformed\jetified-core-1.0.0\res
+com.fridgespin.fridge_spin.app-jetified-activity-ktx-1.8.1-17 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\94ed2022a5f22dfabdc1661c9b21d66a\transformed\jetified-activity-ktx-1.8.1\res
+com.fridgespin.fridge_spin.app-jetified-lifecycle-viewmodel-ktx-2.7.0-18 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\963e53a64e43b35807cfa9360bb26204\transformed\jetified-lifecycle-viewmodel-ktx-2.7.0\res
+com.fridgespin.fridge_spin.app-fragment-1.7.1-19 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\9749285578a861b35e1d5977dcce04df\transformed\fragment-1.7.1\res
+com.fridgespin.fridge_spin.app-jetified-core-ktx-1.13.1-20 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\9b6cf5fc0490698472379d51bf3a052a\transformed\jetified-core-ktx-1.13.1\res
+com.fridgespin.fridge_spin.app-jetified-datastore-preferences-release-21 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\9d9a9c6f1d62d19f5c9a61ef9a7f2a3b\transformed\jetified-datastore-preferences-release\res
+com.fridgespin.fridge_spin.app-jetified-play-services-base-18.1.0-22 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\a6fbd0ceac52a67fd9d6f15827b76cfb\transformed\jetified-play-services-base-18.1.0\res
+com.fridgespin.fridge_spin.app-jetified-savedstate-1.2.1-23 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\a954001dba58885cd72fb62f1139c7cc\transformed\jetified-savedstate-1.2.1\res
+com.fridgespin.fridge_spin.app-jetified-credentials-1.2.0-rc01-24 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\aba039f305357063fbd7a0ae03aeb087\transformed\jetified-credentials-1.2.0-rc01\res
+com.fridgespin.fridge_spin.app-lifecycle-livedata-2.7.0-25 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\ba63f3973845f87280b29d66366178a3\transformed\lifecycle-livedata-2.7.0\res
+com.fridgespin.fridge_spin.app-jetified-activity-1.8.1-26 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\bd99fc456129dca74b4d8c8ec0ca580f\transformed\jetified-activity-1.8.1\res
+com.fridgespin.fridge_spin.app-jetified-datastore-core-release-27 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\bdc6d296d2e953b016dba6429a55e0d6\transformed\jetified-datastore-core-release\res
+com.fridgespin.fridge_spin.app-jetified-window-java-1.2.0-28 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\c6c717e0b8b550fffca3ab37e73a997f\transformed\jetified-window-java-1.2.0\res
+com.fridgespin.fridge_spin.app-transition-1.4.1-29 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\c9615665c95f53d6a5b3792b1606405d\transformed\transition-1.4.1\res
+com.fridgespin.fridge_spin.app-lifecycle-livedata-core-2.7.0-30 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\cc39f985358119924e22c9f73e05054c\transformed\lifecycle-livedata-core-2.7.0\res
+com.fridgespin.fridge_spin.app-jetified-play-services-basement-18.4.0-31 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\ccc28240ed221393945b14679aa780fa\transformed\jetified-play-services-basement-18.4.0\res
+com.fridgespin.fridge_spin.app-jetified-tracing-1.2.0-32 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\cd9a8fdbc253e03d342b1d8b655b24f1\transformed\jetified-tracing-1.2.0\res
+com.fridgespin.fridge_spin.app-jetified-core-common-2.0.3-33 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\ce5f6bc2731606dca56be8f64b65273c\transformed\jetified-core-common-2.0.3\res
+com.fridgespin.fridge_spin.app-browser-1.4.0-34 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\cf28ec08a1f6b54818c904fa6293b928\transformed\browser-1.4.0\res
+com.fridgespin.fridge_spin.app-preference-1.2.1-35 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\d06b9c8003c5a6ce97fdb27c6317dba8\transformed\preference-1.2.1\res
+com.fridgespin.fridge_spin.app-recyclerview-1.0.0-36 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\d36df8a08e7d56eef57a3c484ce7986d\transformed\recyclerview-1.0.0\res
+com.fridgespin.fridge_spin.app-lifecycle-viewmodel-2.7.0-37 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\d7ecbfa7ac864ffd02f9c1d1b2a3089c\transformed\lifecycle-viewmodel-2.7.0\res
+com.fridgespin.fridge_spin.app-jetified-datastore-release-38 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\dbd6f71a128894b2a8444114f5d0120b\transformed\jetified-datastore-release\res
+com.fridgespin.fridge_spin.app-jetified-annotation-experimental-1.4.0-39 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\dcb0927a7c0fa9bfe26b9782a51ce732\transformed\jetified-annotation-experimental-1.4.0\res
+com.fridgespin.fridge_spin.app-core-1.13.1-40 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\de6cf936ea84eac77e9b1a8430a054b1\transformed\core-1.13.1\res
+com.fridgespin.fridge_spin.app-slidingpanelayout-1.2.0-41 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\dfa7ea9cb044150e43b79b9aef497e6a\transformed\slidingpanelayout-1.2.0\res
+com.fridgespin.fridge_spin.app-media-1.1.0-42 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\f6b4f4bf5a1033083cf57c04d32afb09\transformed\media-1.1.0\res
+com.fridgespin.fridge_spin.app-jetified-firebase-common-21.0.0-43 C:\Users\ASUS\.gradle\caches\8.10.2\transforms\fa93abbb65efc31ca79d9b08ab2b98cd\transformed\jetified-firebase-common-21.0.0\res
+com.fridgespin.fridge_spin.app-debug-44 D:\CookWhat App\fridge_spin\android\app\src\debug\res
+com.fridgespin.fridge_spin.app-main-45 D:\CookWhat App\fridge_spin\android\app\src\main\res
+com.fridgespin.fridge_spin.app-pngs-46 D:\CookWhat App\fridge_spin\build\app\generated\res\pngs\debug
+com.fridgespin.fridge_spin.app-res-47 D:\CookWhat App\fridge_spin\build\app\generated\res\processDebugGoogleServices
+com.fridgespin.fridge_spin.app-resValues-48 D:\CookWhat App\fridge_spin\build\app\generated\res\resValues\debug
+com.fridgespin.fridge_spin.app-packageDebugResources-49 D:\CookWhat App\fridge_spin\build\app\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.fridgespin.fridge_spin.app-packageDebugResources-50 D:\CookWhat App\fridge_spin\build\app\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.fridgespin.fridge_spin.app-debug-51 D:\CookWhat App\fridge_spin\build\app\intermediates\merged_res\debug\mergeDebugResources
+com.fridgespin.fridge_spin.app-debug-52 D:\CookWhat App\fridge_spin\build\cloud_firestore\intermediates\packaged_res\debug\packageDebugResources
+com.fridgespin.fridge_spin.app-debug-53 D:\CookWhat App\fridge_spin\build\firebase_core\intermediates\packaged_res\debug\packageDebugResources
+com.fridgespin.fridge_spin.app-debug-54 D:\CookWhat App\fridge_spin\build\flutter_local_notifications\intermediates\packaged_res\debug\packageDebugResources
+com.fridgespin.fridge_spin.app-debug-55 D:\CookWhat App\fridge_spin\build\path_provider_android\intermediates\packaged_res\debug\packageDebugResources
+com.fridgespin.fridge_spin.app-debug-56 D:\CookWhat App\fridge_spin\build\shared_preferences_android\intermediates\packaged_res\debug\packageDebugResources
+com.fridgespin.fridge_spin.app-debug-57 D:\CookWhat App\fridge_spin\build\sqflite_android\intermediates\packaged_res\debug\packageDebugResources

@@ -1,0 +1,21 @@
+R_DEF: Internal format may change without notice
+local
+drawable launch_background
+mipmap ic_launcher
+string add_ingredient
+string app_name
+string cancel
+string category
+string expiry_date
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
+string ingredient_name
+string input_thai_text
+string project_id
+string quantity
+string save
+style LaunchTheme
+style NormalTheme

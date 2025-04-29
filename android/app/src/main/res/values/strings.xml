@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FridgeSpin</string>
+    <string name="input_thai_text">Input Thai Text</string>
+    <string name="add_ingredient">Add Ingredient</string>
+    <string name="ingredient_name">Ingredient Name</string>
+    <string name="quantity">Quantity</string>
+    <string name="expiry_date">Expiry Date</string>
+    <string name="category">Category</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+</resources> 
