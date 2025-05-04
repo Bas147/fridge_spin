@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'dart:io'; // Import for InternetAddress and SocketException
 import 'core/di/injection_container.dart' as di;
 import 'core/services/firebase_service.dart';
 import 'features/ingredient/presentation/providers/ingredient_provider.dart';
@@ -12,6 +13,16 @@ void main() async {
 
   // Display startup messages
   debugPrint('Starting application...');
+
+  // ตรวจสอบการเชื่อมต่ออินเทอร์เน็ต
+  try {
+    final result = await InternetAddress.lookup('google.com');
+    if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
+      print('Connected to the internet');
+    }
+  } on SocketException catch (_) {
+    print('No internet connection');
+  }
 
   // Try to initialize Firebase
   try {

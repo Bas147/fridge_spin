@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="fridge_spin"
+        android:label="FridgeSpin"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -42,4 +42,6 @@
             <data android:mimeType="text/plain"/>
         </intent>
     </queries>
+    <!-- เพิ่มสิทธิ์อินเทอร์เน็ต -->
+    <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

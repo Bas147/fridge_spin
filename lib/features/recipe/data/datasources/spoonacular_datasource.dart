@@ -16,28 +16,81 @@ class SpoonacularDataSourceImpl implements SpoonacularDataSource {
 
   /// Check if ingredients are in English or convert to English
   List<String> _translateIngredientsToEnglish(List<String> ingredients) {
+    // คำแปลจากไทยเป็นอังกฤษ
+    final Map<String, String> thaiToEnglish = {
+      'เนื้อ': 'beef',
+      'เนื้อวัว': 'beef',
+      'หมู': 'pork',
+      'เนื้อหมู': 'pork',
+      'ไก่': 'chicken',
+      'เนื้อไก่': 'chicken',
+      'ปลา': 'fish',
+      'กุ้ง': 'shrimp',
+      'ปู': 'crab',
+      'หอย': 'shellfish',
+      'ไข่': 'egg',
+      'ข้าว': 'rice',
+      'มะเขือเทศ': 'tomato',
+      'แครอท': 'carrot',
+      'หอมใหญ่': 'onion',
+      'กระเทียม': 'garlic',
+      'พริก': 'chili',
+      'มันฝรั่ง': 'potato',
+      'แตงกวา': 'cucumber',
+      'ผักกาดขาว': 'cabbage',
+      'ผักคะน้า': 'kale',
+      'ผักบุ้ง': 'morning glory',
+      'น้ำตาล': 'sugar',
+      'เกลือ': 'salt',
+      'พริกไทย': 'pepper',
+      'ซอสถั่วเหลือง': 'soy sauce',
+      'น้ำมัน': 'oil',
+      'น้ำปลา': 'fish sauce',
+      'นม': 'milk',
+      'เนย': 'butter',
+      'ชีส': 'cheese',
+      'เส้นสปาเกตตี้': 'spaghetti',
+      'บะหมี่': 'noodle',
+    };
+
     final List<String> englishIngredients = [];
 
     // Process each ingredient
     for (String ingredient in ingredients) {
       String english = ingredient.trim().toLowerCase();
 
-      // Check if ingredient is already in English
-      bool isAlreadyEnglish = english
+      // ตรวจสอบว่าเป็นภาษาไทยหรือไม่
+      bool isThai = english
           .split('')
-          .every(
-            (char) => char.codeUnitAt(0) < 128 || char == ' ' || char == ',',
+          .any(
+            (char) =>
+                char.codeUnitAt(0) > 0x0E00 && char.codeUnitAt(0) < 0x0E7F,
           );
 
-      if (isAlreadyEnglish) {
-        englishIngredients.add(english);
+      if (isThai) {
+        // หาคำแปลจากพจนานุกรม
+        bool found = false;
+        for (var thaiWord in thaiToEnglish.keys) {
+          if (english.contains(thaiWord.toLowerCase())) {
+            englishIngredients.add(thaiToEnglish[thaiWord]!);
+            found = true;
+            print('แปลวัตถุดิบ: $english -> ${thaiToEnglish[thaiWord]}');
+            break;
+          }
+        }
+
+        // ถ้าไม่พบในพจนานุกรม ใช้คำทั่วไป
+        if (!found) {
+          englishIngredients.add('ingredient');
+          print('ไม่พบคำแปลสำหรับ: $english, ใช้ "ingredient" แทน');
+        }
       } else {
-        // If not English, use a generic fallback or skip
-        // This assumes users will input ingredients in English
-        englishIngredients.add('ingredient');
+        // ถ้าเป็นภาษาอังกฤษอยู่แล้ว
+        englishIngredients.add(english);
       }
     }
 
+    print('รายการวัตถุดิบที่แปลแล้ว: $englishIngredients');
     return englishIngredients;
   }
 
@@ -63,7 +116,14 @@ class SpoonacularDataSourceImpl implements SpoonacularDataSource {
         },
       );
 
-      if (response.statusCode == 200) {
+      print('Response status: ${response.statusCode}');
+      print('Response data: ${response.data}');
+
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        if (response.data == null || !(response.data is List)) {
+          throw Exception('Invalid response format from API');
+        }
+
         final List<dynamic> recipes = response.data;
 
         if (recipes.isEmpty) {
@@ -101,7 +161,13 @@ class SpoonacularDataSourceImpl implements SpoonacularDataSource {
       } else {
         throw Exception('Failed to fetch recipes: ${response.statusCode}');
       }
+    } on DioException catch (e) {
+      print('DioException occurred: ${e.message}');
+      print('DioException type: ${e.type}');
+      print('DioException response: ${e.response}');
+      throw Exception('Error fetching recipes: ${e.message}');
     } catch (e) {
+      print('General error occurred: $e');
       throw Exception('Error fetching recipes: $e');
     }
   }
@@ -114,14 +180,26 @@ class SpoonacularDataSourceImpl implements SpoonacularDataSource {
         queryParameters: {'includeNutrition': false, 'apiKey': apiKey},
       );
 
-      if (response.statusCode == 200) {
+      print('Recipe details response status: ${response.statusCode}');
+      print('Recipe details response data type: ${response.data.runtimeType}');
+
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        if (response.data == null || !(response.data is Map)) {
+          throw Exception('Invalid recipe details format from API');
+        }
         return RecipeModel.fromSpoonacular(response.data);
       } else {
         throw Exception(
           'Failed to fetch recipe details: ${response.statusCode}',
         );
       }
+    } on DioException catch (e) {
+      print('DioException occurred: ${e.message}');
+      print('DioException type: ${e.type}');
+      print('DioException response: ${e.response}');
+      throw Exception('Error fetching recipe details: ${e.message}');
     } catch (e) {
+      print('General error occurred: $e');
       throw Exception('Error fetching recipe details: $e');
     }
   }

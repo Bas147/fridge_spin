@@ -44,46 +44,62 @@ class RecipeModel extends Recipe {
   }
 
   factory RecipeModel.fromSpoonacular(Map<String, dynamic> json) {
-    // Handle recipe from Spoonacular API format
+    // ตรวจสอบข้อมูลจำเป็นก่อนการสร้างโมเดล
+    if (json['id'] == null) {
+      throw Exception('Recipe ID is missing in API response');
+    }
+
+    // Extract ingredients
     List<String> ingredients = [];
+    try {
+      if (json['extendedIngredients'] != null) {
+        final List<dynamic> extendedIngredients = json['extendedIngredients'];
+        ingredients =
+            extendedIngredients
+                .map(
+                  (ingredient) =>
+                      '${ingredient['amount'] ?? ''} ${ingredient['unit'] ?? ''} ${ingredient['name'] ?? ''}',
+                )
+                .toList();
+      }
+    } catch (e) {
+      print('Error parsing ingredients: $e');
+      // ในกรณีที่ไม่สามารถแยกวิเคราะห์ส่วนผสมได้ เราจะใช้รายการว่าง
+    }
+
+    // Extract instructions
     List<String> instructions = [];
-
-    // Extract ingredients from Spoonacular format
-    if (json['extendedIngredients'] != null) {
-      ingredients =
-          (json['extendedIngredients'] as List).map((ingredient) {
-            String ingredientStr =
-                '${ingredient['amount']} ${ingredient['unit']} ${ingredient['name']}';
-            return ingredientStr;
-          }).toList();
+    try {
+      if (json['analyzedInstructions'] != null &&
+          json['analyzedInstructions'].isNotEmpty &&
+          json['analyzedInstructions'][0]['steps'] != null) {
+        final List<dynamic> steps = json['analyzedInstructions'][0]['steps'];
+        instructions =
+            steps
+                .map<String>((step) => '${step['number']}. ${step['step']}')
+                .toList();
+      } else if (json['instructions'] != null &&
+          json['instructions'].isNotEmpty) {
+        // ถ้าไม่มี analyzedInstructions ให้ใช้ instructions string แทน
+        instructions = [json['instructions']];
+      }
+    } catch (e) {
+      print('Error parsing instructions: $e');
+      // ในกรณีที่ไม่สามารถแยกวิเคราะห์คำแนะนำได้ เราจะใช้รายการว่าง
     }
-
-    // Extract instructions from Spoonacular format
-    if (json['analyzedInstructions'] != null &&
-        (json['analyzedInstructions'] as List).isNotEmpty) {
-      final steps = json['analyzedInstructions'][0]['steps'] as List;
-      instructions =
-          steps.map((step) {
-            final stepText = step['step'] as String;
-            return stepText;
-          }).toList();
-    }
-
-    // Use original English title
-    String title = json['title'] as String;
 
     return RecipeModel(
-      id: json['id'] as int,
-      name: title,
+      id: json['id'],
+      name: json['title'] ?? 'Unknown Recipe',
       image: json['image'] ?? '',
       ingredients: ingredients,
       instructions: instructions,
       cuisine:
-          (json['cuisines'] as List?)?.isNotEmpty == true
-              ? (json['cuisines'] as List).first as String
-              : 'Unknown',
-      servings: json['servings'] as int? ?? 2,
-      cookingTimeMinutes: json['readyInMinutes'] as int? ?? 30,
+          json['cuisines'] != null && json['cuisines'].isNotEmpty
+              ? json['cuisines'][0]
+              : 'Mixed',
+      servings: json['servings'] ?? 1,
+      cookingTimeMinutes: json['readyInMinutes'] ?? 30,
       isFavorite: false,
     );
   }
@@ -93,31 +109,68 @@ class RecipeModel extends Recipe {
     return cuisine;
   }
 
-  factory RecipeModel.fromJson(Map<String, dynamic> json) {
-    return RecipeModel(
-      id: json['id'] as int,
-      name: json['name'] as String,
-      image: json['image'] as String,
-      ingredients: List<String>.from(json['ingredients']),
-      instructions: List<String>.from(json['instructions']),
-      cuisine: json['cuisine'] as String,
-      servings: json['servings'] as int,
-      cookingTimeMinutes: json['cookingTimeMinutes'] as int,
-      isFavorite: json['isFavorite'] as bool? ?? false,
-    );
+  @override
+  String toString() {
+    return 'RecipeModel(id: $id, name: $name, ingredients: $ingredients, instructions: $instructions, cuisine: $cuisine, servings: $servings, cookingTimeMinutes: $cookingTimeMinutes, isFavorite: $isFavorite)';
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'name': name,
-      'image': image,
-      'ingredients': ingredients,
-      'instructions': instructions,
-      'cuisine': cuisine,
-      'servings': servings,
-      'cookingTimeMinutes': cookingTimeMinutes,
-      'isFavorite': isFavorite,
-    };
+    try {
+      return {
+        'id': id,
+        'name': name,
+        'image': image,
+        'ingredients': ingredients,
+        'instructions': instructions,
+        'cuisine': cuisine,
+        'servings': servings,
+        'cookingTimeMinutes': cookingTimeMinutes,
+        'isFavorite': isFavorite,
+      };
+    } catch (e) {
+      print('Error serializing recipe: $e');
+      // Return minimal valid JSON if there's an error
+      return {
+        'id': id,
+        'name': name,
+        'image': '',
+        'ingredients': <String>[],
+        'instructions': <String>[],
+        'cuisine': 'Unknown',
+        'servings': 1,
+        'cookingTimeMinutes': 30,
+        'isFavorite': false,
+      };
+    }
+  }
+
+  factory RecipeModel.fromJson(Map<String, dynamic> json) {
+    try {
+      return RecipeModel(
+        id: json['id'],
+        name: json['name'],
+        image: json['image'] ?? '',
+        ingredients: List<String>.from(json['ingredients'] ?? []),
+        instructions: List<String>.from(json['instructions'] ?? []),
+        cuisine: json['cuisine'] ?? 'Unknown',
+        servings: json['servings'] ?? 1,
+        cookingTimeMinutes: json['cookingTimeMinutes'] ?? 30,
+        isFavorite: json['isFavorite'] ?? false,
+      );
+    } catch (e) {
+      print('Error deserializing recipe: $e');
+      // Return minimal valid object if there's an error
+      return RecipeModel(
+        id: json['id'] ?? 0,
+        name: json['name'] ?? 'Unknown Recipe',
+        image: '',
+        ingredients: <String>[],
+        instructions: <String>[],
+        cuisine: 'Unknown',
+        servings: 1,
+        cookingTimeMinutes: 30,
+        isFavorite: false,
+      );
+    }
   }
 }
